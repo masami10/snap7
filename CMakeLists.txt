@@ -26,8 +26,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 add_library(snap7Lib STATIC ${SOURCE_FILES})
 add_library(snap7 SHARED ${SOURCE_FILES})
 
-if(MINGW)
+set_target_properties(snap7Lib PROPERTIES OUTPUT_NAME snap7)
+
+if(WIN32)
     target_link_libraries(snap7 ws2_32 winmm)
     target_link_libraries(snap7Lib ws2_32 winmm)
-    set_target_properties(snap7Lib PROPERTIES OUTPUT_NAME snap7)
 endif()
