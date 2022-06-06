@@ -37,9 +37,9 @@
 #endif
 
 // Visual Studio needs this to use the correct time_t size
-#if defined (_WIN32) && !defined(_WIN64)
-# define _USE_32BIT_TIME_T 
-#endif
+//#if defined (_WIN32) && !defined(_WIN64)
+//# define _USE_32BIT_TIME_T
+//#endif
 
 #if defined(unix) || defined(__unix__) || defined(__unix)
 # define PLATFORM_UNIX
